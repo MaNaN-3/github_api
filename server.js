@@ -1,7 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
-const gitToken = "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";
+require("dotenv").config();
+const gitToken = process.env.GIT_TOKEN;
 const { Octokit } = require("@octokit/rest");
 const octokit = new Octokit({
   auth: gitToken,
